@@ -6,6 +6,20 @@ Feature: User Registration
     Then I should see the message "Please confirm your email first. Or just resend confirmation"
     And I log out
 
+  Scenario Outline: Username validation
+    Given I visit "Registration" page
+    And I register an account with username "<Username>"
+    Then I should see the "<Error Message>"
+
+    Examples: Too Short or Too Long
+      | Username     | Error Message                                   |
+      | abcd         | Username is too short (minimum is 4 characters) |
+      | abcedfghijk  | Username is too long (maximum is 10 characters) |
+
+    Examples: Username contains letters
+      | Username     | Error Messsage                                   |
+      | User001      | Username only allows letters                     |
+
 	Scenario Outline: Password validation
 		Given I visit "Registration" page
 		And I register an account with password "<Password>"

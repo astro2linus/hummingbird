@@ -1,6 +1,8 @@
 def register(args = {})
-  [:first_name, :last_name, :email, :password, :password_confirmation].each do |a|
+  [:user_name, :first_name, :last_name, :email, :password, :password_confirmation].each do |a|
   	case a
+  	when :user_name
+  		fill_in :user_username, with: args[a]
   	when :first_name
   		fill_in :user_first_name, with: args[a]
   	when :last_name

@@ -1,7 +1,8 @@
 require 'capybara'
 include Capybara::DSL
 
-Capybara.app_host = 'https://calvert:intridea4calvert@dev.calvert.intridea.com'
+#Capybara.app_host = 'https://calvert:intridea4calvert@dev.calvert.intridea.com'
+Capybara.app_host = 'http://localhost:3000'
 
 Capybara.current_driver = :selenium
 
