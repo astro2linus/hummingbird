@@ -10,3 +10,7 @@ end
 Given(/^I visit "(.*?)" page$/) do |page_name|
   page_to page_name
 end
+
+Given /^I am on home page$/ do |url|
+  navigate.to '/'
+end

@@ -13,7 +13,7 @@ Feature: User Registration
 
     Examples: Too Short or Too Long
       | Username     | Error Message                                   |
-      | abcd         | Username is too short (minimum is 4 characters) |
+      | abc         | Username is too short (minimum is 4 characters) |
       | abcedfghijk  | Username is too long (maximum is 10 characters) |
 
     Examples: Username contains letters

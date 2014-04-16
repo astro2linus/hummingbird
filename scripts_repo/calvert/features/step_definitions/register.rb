@@ -19,6 +19,19 @@ Given(/^I register an account with valid informaiton$/) do
   register(args)
 end
 
+# Username validation
+Given(/^I register an account with username "(.*?)"$/) do |username|
+  ts = Time.now.to_i.to_s
+  email = "test#{ts}@test.com"
+  uname = username
+  args = {:user_name => uname, :first_name => "Koala", :last_name => "Bear",
+    :password => "Abc1234", :password_confirmation => "Abc1234",
+    :email => email
+  }
+  register(args)
+end
+
+
 # Password validation
 
 Given(/^I register an account with password "(.*?)"$/) do |pwd|
